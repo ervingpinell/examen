@@ -214,6 +214,7 @@
     </Compile>
     <Compile Include="Models\DAO\UserDAO.cs" />
     <Compile Include="Models\DTO\UserDTO.cs" />
+    <Compile Include="Models\DTO\UserLiveCycle.cs" />
     <Compile Include="Models\SecurityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
