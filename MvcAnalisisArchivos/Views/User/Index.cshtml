@@ -54,10 +54,18 @@
                 @Html.DisplayFor(modelItem => item.AccountNumber)
             </td>
             <td>
+                @*
+                    ActionLink Constructor example to call the same user Controller
+                    public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string linkText, string actionName, object routeValues)
+                *@
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
                 @Html.ActionLink("Go ATM", "Details", "Atm", new { id = item.Id }, null)
+                @*
+                    ActionLink Constructor example to call other controllers
+                    public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string linkText, string actionName, string controllerName, object routeValues, object htmlAttributes)
+                *@
             </td>
         </tr>
     }
