@@ -1,0 +1,60 @@
+﻿@model MvcAnalisisArchivos.Models.DTO.UserLiveCycleDTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserLiveCycleDTO</h4>
+    @Html.Partial("_Partial1")
+    @Html.Partial("_Partial2")
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Session)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session)
+        </dd>
+
+        <h1>User data</h1>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Balance)
+        </dd>
+
+        <h1>Atm data</h1>
+        <dt>
+            @Html.DisplayNameFor(model => model.Atm.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Atm.Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Atm.OutServiceMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Atm.OutServiceMessage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

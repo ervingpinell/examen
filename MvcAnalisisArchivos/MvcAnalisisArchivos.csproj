@@ -206,15 +206,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AtmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DAO\AtmParameterDAO.cs" />
     <Compile Include="Models\DAO\UserDAO.cs" />
+    <Compile Include="Models\DTO\AtmParameterDTO.cs" />
     <Compile Include="Models\DTO\UserDTO.cs" />
-    <Compile Include="Models\DTO\UserLiveCycle.cs" />
+    <Compile Include="Models\DTO\UserLiveCycleDTO.cs" />
     <Compile Include="Models\SecurityConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -271,6 +274,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\Atm\Details.cshtml" />
+    <Content Include="Views\Atm\_Partial1.cshtml" />
+    <Content Include="Views\Atm\_Partial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
