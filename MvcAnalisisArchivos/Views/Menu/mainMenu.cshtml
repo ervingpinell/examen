@@ -4,21 +4,24 @@
     ViewBag.Title = "mainMenu";
 }
 
-<h2>Banco de CR</h2>
+<h2>CAJERO AUTOMATICO</h2>
 
 <div>
-    <h4>Cajero automatico</h4>
+    <h4>Bienvenido, que desea realizar?</h4>
     <hr />
     <dl class="dl-horizontal">
 
-        <h1>Bienvenido al cajero automatico, que desea realizar?</h1>
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
 
     </dl>
 </div>
 <p>
-    <button>@Html.ActionLink("Show Balance", "showBalance") </button> 
-    <button>@Html.ActionLink("Withdraw", "withdrawMoney") </button> 
-</p>
-<p>
-    <button>@Html.ActionLink("Exit", "exit") </button>
-</p>
+    <button> @Html.ActionLink("Show Balance", "showBalance", new { id = Model.Id })</button>
+    <button> @Html.ActionLink("Withdraw Money", "withdrawMoney", new { id = Model.Id })</button>
+    <button> @Html.ActionLink("Exit", "LogIn") </button>

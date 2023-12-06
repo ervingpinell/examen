@@ -1,13 +1,13 @@
 ﻿@model MvcAnalisisArchivos.Models.DTO.UserDTO
 
-
 @{
     ViewBag.Title = "Iniciar Sesión";
 }
 
 <h2>Iniciar Sesión</h2>
 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm("LogIn", "menu", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -23,6 +23,5 @@
         @Html.ValidationMessageFor(model => model.Code)
     </div>
 
-    <button type="submit" class="btn btn-primary">LogIn</button>
-      
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
 }

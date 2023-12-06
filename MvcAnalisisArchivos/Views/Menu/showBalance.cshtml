@@ -4,13 +4,22 @@
     ViewBag.Title = "showBalance";
 }
 
-<h2>showBalance</h2>
+<h2>CAJERO AUTOMATICO</h2>
 
 <div>
-    <h4>UserLiveCycleDTO</h4>
+    <h4>SU INFORMACION ES:</h4>
     <hr />
     <dl class="dl-horizontal">
-        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+
         <dt>
             @Html.DisplayNameFor(model => model.User.Name)
         </dt>
@@ -49,5 +58,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back", "mainMenu")
+    @Html.ActionLink("Back", "mainMenu", new { id = Model.Id })
 </p>
