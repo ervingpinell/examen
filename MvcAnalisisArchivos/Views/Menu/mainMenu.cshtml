@@ -1,0 +1,24 @@
+﻿@model MvcAnalisisArchivos.Models.DTO.UserLiveCycleDTO
+
+@{
+    ViewBag.Title = "mainMenu";
+}
+
+<h2>Banco de CR</h2>
+
+<div>
+    <h4>Cajero automatico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <h1>Bienvenido al cajero automatico, que desea realizar?</h1>
+
+    </dl>
+</div>
+<p>
+    <button>@Html.ActionLink("Show Balance", "showBalance") </button> 
+    <button>@Html.ActionLink("Withdraw", "withdrawMoney") </button> 
+</p>
+<p>
+    <button>@Html.ActionLink("Exit", "exit") </button>
+</p>

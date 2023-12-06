@@ -10,88 +10,105 @@ namespace MvcAnalisisArchivos.Controllers
 {
     public class AtmController : Controller
     {
-        private UserDAO userDAO = new UserDAO();
+        private AtmParameterDAO atmParameterDAO = new AtmParameterDAO();
 
-        private AtmParameterDAO atmDAO = new AtmParameterDAO();
-
-        // GET: Atm
+        // GET: User
         public ActionResult Index()
         {
-            return View();
+            return View(atmParameterDAO.ReadAtms());
         }
 
-        // GET: Atm/Details/5
+        // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            UserLiveCycleDTO userLiveCycleDTO = new UserLiveCycleDTO();
-            userLiveCycleDTO.Session = 1;
-            userLiveCycleDTO.User = userDAO.ReadUser(id);
-            userLiveCycleDTO.Atm = atmDAO.GetAtmParameter();
-            return View(userLiveCycleDTO);
+            return View(atmParameterDAO.ReadAtm(id));
         }
 
-        // GET: Atm/Create
+        // GET: User/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Atm/Create
+        // POST: User/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(AtmParameterDTO atm)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    // Perform any additional validation or business logic here
+                    // For example, check if the email is unique before creating a new user
 
-                return RedirectToAction("Index");
+                    // Create the user
+                    string response = atmParameterDAO.CreateAtm(atm);
+
+                    if (response == "Success")
+                        return RedirectToAction("Index");
+                    else
+                        ModelState.AddModelError("", "Failed to create user. Please try again.");
+                }
+
+                return View(atm);
             }
             catch
             {
-                return View();
+                return View(atm);
             }
         }
 
-        // GET: Atm/Edit/5
+        // GET: User/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(atmParameterDAO.ReadAtm(id));
         }
 
-        // POST: Atm/Edit/5
+        // POST: User/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, UserDTO user)
         {
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    // Perform any additional validation or business logic here
 
-                return RedirectToAction("Index");
+                    // Update the user
+                    string response = atmParameterDAO.UpdateAtm(id, user);
+
+                    if (response == "Success")
+                        return RedirectToAction("Index");
+                    else
+                        ModelState.AddModelError("", "Failed to update user. Please try again.");
+                }
+
+                return View(user);
             }
             catch
             {
-                return View();
+                return View(user);
             }
         }
 
-        // GET: Atm/Delete/5
+        // GET: User/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Atm/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add delete logic here
+                // Delete the user
+                string response = atmParameterDAO.DeleteAtm(id);
+
+                if (response == "Success")
+                    return RedirectToAction("Index");
+                else
+                    ModelState.AddModelError("", "Failed to delete user. Please try again.");
 
                 return RedirectToAction("Index");
             }
             catch
             {
+                // We have no a view here
                 return View();
             }
         }

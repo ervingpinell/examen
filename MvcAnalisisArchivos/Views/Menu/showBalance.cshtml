@@ -1,0 +1,53 @@
+﻿@model MvcAnalisisArchivos.Models.DTO.UserLiveCycleDTO
+
+@{
+    ViewBag.Title = "showBalance";
+}
+
+<h2>showBalance</h2>
+
+<div>
+    <h4>UserLiveCycleDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.AccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.AccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Balance)
+        </dd>
+
+        <dt>
+            <p>ATM BALANCE</p>
+
+
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.Atm.Balance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back", "mainMenu")
+</p>
